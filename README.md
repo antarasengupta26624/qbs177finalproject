@@ -31,8 +31,11 @@ V. References \
 
 ## III. Methods
 
+### A. Data Wrangling
 
+### B. Data Visualizations
 
+### C. Modeling
 
 
 
