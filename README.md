@@ -45,7 +45,7 @@ V. References \
 
 #### 3. {cluster}
 
-#### 4. eXtreme Gradient Boosting (XGBoost)
+#### 4. **eXtreme Gradient Boosting (XGBoost)**
 
 **What is XGBoost?**
 Machine learning algorithm designed for structured data.  
