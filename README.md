@@ -46,50 +46,53 @@ V. References \
 #### 3. {cluster}
 
 #### 4. eXtreme Gradient Boosting (XGBoost)
-What is XGBoost?
 
-A. Machine learning algorithm designed for structured data. It improves prediction accuracy by sequentially boosting weak models while reducing errors. 
+##### What is XGBoost?
+Machine learning algorithm designed for structured data.  
+It improves prediction accuracy by sequentially boosting weak models while reducing errors.
 
-B. How it works:
-	
- 	a. Builds decision trees sequentially
-	
- 	b. Each tree corrects errors from the previous one 
-	
- 	c. Uses gradient boosting to optimize predictions 
+##### How It Works:
+- Builds decision trees sequentially
+- Each tree corrects errors from the previous one
+- Uses gradient boosting to optimize predictions
 
-Why XGBoost?
 
-A. Handles complex interactions between SES factors
+##### Why XGBoost?
+###### Handles Complex Interactions Between SES Factors
+- Mental health is influenced by multiple SES factors (e.g., income, education, household size).
+- XGBoost captures nonlinear relationships & interactions better than traditional regression models.
+  	- The impact of education on depression might depend on income level, and XGBoost can learn these dependencies on its own.
 
-B. Mental health is influenced by multiple SES factors that interact with each other (e.g., income, education, household size). 
+###### Feature Importance and Interpretability
+- Ranks features by importance, showing which SES factors are most predictive of depression (PHQ-9 scores).
+- Helps identify key factors driving mental health disparities.
 
-C. XGBoost captures nonlinear relationships and interactions better than traditional regression models for big datasets. 
+###### Good at Handling Large, Imbalanced Datasets
+- NHANES has imbalanced data (e.g., more people with low PHQ-9 scores than high).
+- XGBoost has built-in handling for class imbalance, improving predictions across different groups.
+- Confirms accurate predictions across different SES groups, even if some are underrepresented.
+  
 
-	a. Ex// The impact of education on depression might depend on income level, and XGBoost can learn these dependencies on its own.
-Feature Importance and Interpretability 
-Ranks features by importance, showing which SES factors are most predictive of depression (PHQ-9 scores).
-Helps identify key factors driving mental health disparities. 
-Good at handling large, imbalanced datasets 
-NHANES has imbalanced data (e.g., more people with low PHQ-9 scores than high)
-XGBoost has built-in handling for class imbalance, improving predictions across different groups. 
-Confirms accurate predictions across different SES groups, even if some are underrepresented.
+##### Code Breakdown
+###### Defining Predictors
+- Selected 10 SES features for predicting PHQ-9 scores.
 
-Code Breakdown:
-Defining predictors 
-Selected 10 SES features
-Split data into training & testing sets 
-80% training, 20% testing for model evaluation
-Convert data for XGBoost
-Requires numeric matrix format 
-Target variable: PHQ-9 score (Depression severity)
-Train XGBoost model
-100 boosting rounds, learning rate = 0.1, max tree depth = 6 levels 
-Evaluate model performance 
-RMSE (root mean squared error) for measuring prediction accuracy 
-R-squared shows how well SES factors explain depression variability 
-Feature importance analysis 
-Identifies key predictors affecting PHQ-9 scores 
+###### Split Data Into Training & Testing Sets
+- 80% training, 20% testing for model evaluation.
+
+###### Convert Data for XGBoost
+- XGBoost requires numeric matrix format.
+- Target variable: PHQ-9 score (Depression severity).
+
+###### Train XGBoost Model
+- 100 boosting rounds, learning rate = 0.1, max tree depth = 6 levels.
+
+###### Evaluate Model Performance
+- RMSE (Root Mean Squared Error): Measures prediction accuracy.
+- R-squared: Shows how well SES factors explain depression variability.
+
+###### Feature Importance Analysis
+- Identifies key predictors affecting PHQ-9 scores.
 
 
 <iframe src="Feature_Importance_Plot.html" width=800 height=600 frameBorder=0></iframe>
