@@ -51,15 +51,22 @@ What is XGBoost?
 A. Machine learning algorithm designed for structured data. It improves prediction accuracy by sequentially boosting weak models while reducing errors. 
 
 B. How it works:
-	a. Builds decision trees sequentially
-	b. Each tree corrects errors from the previous one 
-	c. Uses gradient boosting to optimize predictions 
+	
+ 	a. Builds decision trees sequentially
+	
+ 	b. Each tree corrects errors from the previous one 
+	
+ 	c. Uses gradient boosting to optimize predictions 
 
 Why XGBoost?
-Handles complex interactions between SES factors
-Mental health is influenced by multiple SES factors that interact with each other (e.g., income, education, household size). 
-XGBoost captures nonlinear relationships and interactions better than traditional regression models for big datasets. 
-Ex// The impact of education on depression might depend on income level, and XGBoost can learn these dependencies on its own.
+
+A. Handles complex interactions between SES factors
+
+B. Mental health is influenced by multiple SES factors that interact with each other (e.g., income, education, household size). 
+
+C. XGBoost captures nonlinear relationships and interactions better than traditional regression models for big datasets. 
+
+	a. Ex// The impact of education on depression might depend on income level, and XGBoost can learn these dependencies on its own.
 Feature Importance and Interpretability 
 Ranks features by importance, showing which SES factors are most predictive of depression (PHQ-9 scores).
 Helps identify key factors driving mental health disparities. 
