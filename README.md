@@ -45,9 +45,11 @@ V. References \
 
 #### 3. {cluster}
 
-#### 4. eXtreme Gradient Boostin (XGBoost)
+#### 4. eXtreme Gradient Boosting (XGBoost)
 What is XGBoost?
+
 A. Machine learning algorithm designed for structured data. It improves prediction accuracy by sequentially boosting weak models while reducing errors. 
+
 B. How it works:
 	a. Builds decision trees sequentially
 	b. Each tree corrects errors from the previous one 
