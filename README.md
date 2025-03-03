@@ -97,7 +97,7 @@ V. References \
 - Identifies key predictors affecting PHQ-9 scores.
 
 
-<iframe src="Feature_Importance_Plot.html" width=800 height=600 frameBorder=0></iframe>
+<iframe src="xgboost.html" width=800 height=600 frameBorder=0></iframe>
 
 ## IV. Conclusion
 
