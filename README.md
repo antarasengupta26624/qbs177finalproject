@@ -15,19 +15,18 @@
 I. Introduction \
 II. Objectives \
 III. Methods* \
-IV. Conclusions \
+IV. Results \
 V. References \
-*All code can be found in Methods_final.pdf
+*All code notebooks can be found the in analysis_nbs folder.
 
 ## I. Introduction
 
-
 ### A. Background
-Socioeconomic disparities have played as significant factors in individuals and communities’ wellness.  Factors such as race, gender, age, levels of education , marriage status, income, geographic location, and income could all be parts of very critical to one’s mental health. However, the resources are not equally distributed among everyone, individual’s can face barriers and limit access to helpful resources due to socioeconomic disparities.\
-Although that mental health disorder can happen to anyone regardless of their socioeconomic background, those who have lower socioeconomic background may have a higher chance of mental illness. In addition, socioeconomic disparities and systemic inequalities may cause limited resources for mental health care, social support, and the proper help one might need.\
+Socioeconomic disparities have played as significant factors in individuals and communities’ wellness.  Factors such as race, gender, age, levels of education , marriage status, income, geographic location, and income could all be parts of very critical to one’s mental health. However, the resources are not equally distributed among everyone, individual’s can face barriers and limit access to helpful resources due to socioeconomic disparities.
+Although that mental health disorder can happen to anyone regardless of their socioeconomic background, those who have lower socioeconomic background may have a higher chance of mental illness. In addition, socioeconomic disparities and systemic inequalities may cause limited resources for mental health care, social support, and the proper help one might need.
 
 ### B. Dataset
-We are using data from the National Health and Nutrition Examination Survey (NHANES) for the years 2021-2023. This dataset provides us an overview of different demographic factors such as income, education, and household sizes and the PAtient Health Questionnaire responses(PHQ-9)\
+We are using data from the National Health and Nutrition Examination Survey (NHANES) for the years 2021-2023. This dataset provides us an overview of different demographic factors such as income, education, and household sizes and the PAtient Health Questionnaire responses(PHQ-9).
 
 ## II. Objectives
 1. Analyze the impact of socioeconomic factors on mental health.
@@ -51,7 +50,11 @@ We are using data from the National Health and Nutrition Examination Survey (NHA
 - Converted values 7 (refused) and 9 (missing) to NA for accurate processing.
 - Computed PHQ-9 Total Score by summing all valid responses while ignoring NA values.
 
-### B. Data Visualizations
+All analysis was done in R and Python. Packages used includes scikit-learn, ggplot2, and plotly. All the code is provided within a folder in this repository.
+
+
+## IV. Results
+### A. Data Visualizations
 <iframe src="assets/barplot.html" width=800 height=600 frameBorder=0></iframe>
 
 <iframe src="assets/boxplot.html" width=800 height=600 frameBorder=0></iframe>
@@ -61,8 +64,7 @@ We are using data from the National Health and Nutrition Examination Survey (NHA
 <iframe src="assets/subplot_box.html" width=800 height=600 frameBorder=0></iframe>
 
 
-
-### C. Modeling
+### B. Modeling
 
 #### 1. Regression Model
 
@@ -114,12 +116,7 @@ Based on our linear model results, we conclude that the factors with the **stron
 However, **race, month of survey, military status, and household size** have **little or no effect** on depression scores.
 
 
-
-
-
-
 #### 2. Random Forest
-
 
 <iframe src="assets/fig_actual_vs_predicted.html" width=800 height=600 frameBorder=0></iframe>
 
@@ -213,8 +210,8 @@ Using these clusters, further analysis can be performed to determine the demogra
 
 <iframe src="assets/xgboost.html" width=800 height=600 frameBorder=0></iframe>
 
-## IV. Conclusion
+## V. Conclusion
 
 
-## V. References
+## VI. References
 
