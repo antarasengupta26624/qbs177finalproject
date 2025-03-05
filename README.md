@@ -55,15 +55,34 @@ All analysis was done in R and Python. Packages used includes scikit-learn, ggpl
 
 
 ## IV. Results
+
+In our analysis, we focused on several key variables that will play a crucial role in shaping our models. Let’s take a closer look at some impactful visualizations that illustrate the relationships between socioeconomic factors and PHQ-9 scores.
+
 ### A. Data Visualizations
+
+#### 1. Average Total PHQ-9 Scores by Race and Birth Country
+
 <iframe src="assets/barplot.html" width=800 height=600 frameBorder=0></iframe>
+
+The horizontal stacked bar plot depicts race on the y-axis and total PHQ-9 scores on the x-axis, color-coded by whether individuals were born in the U.S. or elsewhere. The findings indicate that individuals born in the U.S. tend to report higher depression scores than those born outside the country, regardless of age. Notably, Hispanic and Mexican participants exhibit the highest average PHQ-9 scores, highlighting potential challenges faced within these demographic groups.
+
+#### 2. Total PHQ-9 Scores by Marital and Military Status
 
 <iframe src="assets/boxplot.html" width=800 height=600 frameBorder=0></iframe>
 
+This visualization sheds light on the intersection of marital and military status with mental health. The data shows that individuals who have never married and have not served in the military report the highest median PHQ-9 scores. Conversely, married individuals present the lowest scores and exhibit less variability, indicating the stabilizing effect of marital support. Interestingly, those who have not served in the military tend to have higher depression scores, raising important questions about the impact of military experiences on mental health.
+
+#### 3. Average PHQ-9 Scores Based on Education Level and Gender
+
 <iframe src="assets/funnel_plot.html" width=800 height=600 frameBorder=0></iframe>
+
+The funnel plot demonstrates how education level and gender relate to PHQ-9 scores. It reveals a consistent trend: women tend to report higher depression scores than men across all education levels. Additionally, there’s a clear decrease in PHQ-9 scores with increased educational attainment, emphasizing the significant role that education can play in promoting mental well-being.
+
+#### 4. Total PHQ-9 Score Analysis by Age Group, Income Level, and Household Size
 
 <iframe src="assets/subplot_box.html" width=800 height=600 frameBorder=0></iframe>
 
+Finally, we have three box plots depicting PHQ-9 scores across age groups, income-to-poverty ratios, and household sizes. The results indicate a linear decline in PHQ-9 scores with increasing age and income levels, with some exceptions observed among those with particularly high income-to-poverty ratios. While the relationship between household size and depression scores is less pronounced, data indicates that individuals living in households of two or six members report the lowest PHQ-9 scores.
 
 ### B. Modeling
 
@@ -184,7 +203,7 @@ So, what factors are most important in predicting depression scores? According t
 - Income Poverty Ratio
 - Age
 - Household Size
-= Education Level
+- Education Level
 
 These socioeconomic factors are crucial in understanding mental health outcomes, and the model's feature importance revealed just how significant they are in predicting depression.
 
@@ -281,4 +300,8 @@ Using these clusters, further analysis can be performed to determine the demogra
 
 
 ## VI. References
-
+1. National Health and Nutrition Examination Survey (NHANES). (2021-2023). [Dataset source description].
+2. R Core Team (2021). R: A language and environment for statistical computing. R Foundation for Statistical Computing.
+3. Breiman, L. (2001). Random Forests. Machine Learning, 45(1), 5-32.
+4. Chen, T., & Guestrin, C. (2016). XGBoost: A Scalable Tree Boosting System. In Proceedings of the 22nd ACM SIGKDD International Conference on Knowledge Discovery and Data Mining (pp. 785-794).
+5. Additional sources based on data and methods used.
