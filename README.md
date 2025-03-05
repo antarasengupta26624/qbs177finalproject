@@ -10,6 +10,8 @@
 
 # Socioeconomic Disparities in Mental Health
 
+<iframe src="assets/mental_health.jpg" width=800 height=600 frameBorder=0></iframe>
+
 
 ## Contents 
 I. Introduction \
@@ -27,6 +29,9 @@ Socioeconomic disparities have played as significant factors in individuals and 
 Although that mental health disorder can happen to anyone regardless of their socioeconomic background, those who have lower socioeconomic background may have a higher chance of mental illness. In addition, socioeconomic disparities and systemic inequalities may cause limited resources for mental health care, social support, and the proper help one might need.
 
 ### B. Dataset
+
+<iframe src="assets/nhanes.jpg" width=800 height=600 frameBorder=0></iframe>
+
 We are using data from the National Health and Nutrition Examination Survey (NHANES) for the years 2021-2023. This dataset provides us an overview of different demographic factors such as income, education, and household sizes and the PAtient Health Questionnaire responses(PHQ-9).
 
 ## II. Objectives
