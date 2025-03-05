@@ -34,7 +34,7 @@ We are using data from the National Health and Nutrition Examination Survey (NHA
 
 ## II. Objectives
 1. Analyze the impact of socioeconomic factors on mental health.
-2. identify key predictors of mental health disorders.
+2. Identify key predictors of mental health disorders.
 3. Enhance awareness and advocate for equitable mental health resourcees. 
 
 ## III. Methods
@@ -48,7 +48,8 @@ We are using data from the National Health and Nutrition Examination Survey (NHA
 - Implemented Multiple Imputation by Chained Equations (MICE) with predictive mean matching (pmm) to estimate missing values.
 - Created five imputed datasets and opted for the first dataset for all analyses.
 
-3. Constructing the PHQ-9 Depression Score   
+3. Constructing the PHQ-9 Depression Score
+- Clinically validated measure used to assess the severity of depression with higher scores indicating more severe depressive symptoms. 
 - Identified PHQ-9 questionnaire items (‘DPQ010’ to ‘DPQ090’).
 - Converted values 7 (refused) and 9 (missing) to NA for accurate processing.
 - Computed PHQ-9 Total Score by summing all valid responses while ignoring NA values.
