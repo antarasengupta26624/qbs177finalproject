@@ -60,10 +60,10 @@ We are using data from the National Health and Nutrition Examination Survey (NHA
 
 #### 1. {regression model}
 
-**Method**
+**Method ** 
 To analyze the relationship between various demographic and socioeconomic factors with depression scores, we used a simple linear regression as our model. We first prepared the dataset by renaming the variables name for clarification and convert the categorical variables into factors. Then we run the linear regression models in a loop, evaluating each variable as a predictor to see their impact on the depression score.
 
-**Result**
+**Result **
 1. Race
 - Non-Hispanic Asians tend to have a significantly lower depression score compared to the baseline (Mexican American).  
 
@@ -96,7 +96,9 @@ To analyze the relationship between various demographic and socioeconomic factor
 10. Income-to-Poverty Ratio
 - A higher income-to-poverty ratio is statistically associated with **lower depression scores**. As income-to-poverty ratio increases, depression scores decrease.  
 
-** Conclusion **
+
+
+**Conclusion **
 Based on our linear model results, we conclude that the factors with the **strongest influence** on depression scores are:
 - **Gender** (higher depression in females)
 - **Age** (negative effect)
