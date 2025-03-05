@@ -30,11 +30,12 @@ Socioeconomic disparities have played as significant factors in individuals and 
 Although that mental health disorder can happen to anyone regardless of their socioeconomic background, those who have lower socioeconomic background may have a higher chance of mental illness. In addition, socioeconomic disparities and systemic inequalities may cause limited resources for mental health care, social support, and the proper help one might need.\
 
 ### B. Dataset
-For our project, we help to explore the relationship between various socioeconomic factors and mental health illness, and we hope to reduce socioeconomic disparities and improve overall-health being. \
 We are using data from the National Health and Nutrition Examination Survey (NHANES) for the years 2021-2023. This dataset provides us an overview of different demographic factors such as income, education, and household sizes and the PAtient Health Questionnaire responses(PHQ-9)\
 
 ## II. Objectives
-
+1. Analyze the impact of socioeconomic factors on mental health.
+2. identify key predictors of mental health disorders.
+3. Enhance awareness and advocate for equitable mental health resourcees. 
 
 ## III. Methods
 
