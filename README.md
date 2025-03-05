@@ -70,9 +70,10 @@ All analysis was done in R and Python. Packages used includes scikit-learn, ggpl
 #### 1. Regression Model
 
 **Method** 
+
 To analyze the relationship between various demographic and socioeconomic factors with depression scores, we used a simple linear regression as our model. We first prepared the dataset by renaming the variables name for clarification and convert the categorical variables into factors. Then we run the linear regression models in a loop, evaluating each variable as a predictor to see their impact on the depression score.
 
-**Result**
+**Results**
 1. Race
 - Non-Hispanic Asians tend to have a significantly lower depression score compared to the baseline (Mexican American).  
 
@@ -117,14 +118,76 @@ Based on our linear model results, we conclude that the factors with the **stron
 However, **race, month of survey, military status, and household size** have **little or no effect** on depression scores.
 
 
-#### 2. Random Forest
+#### 2. Random Forest Regressor
+
+** Why Random Forest? ** 
+
+In the search to uncover the hidden drivers of mental health disparities, a good option seemed to be to use the Random Forest Regressor to predict depression scores (PHQ-9) based on socioeconomic factors. What makes this method special? It helps us explore complex relationships between factors like race, age, education, income, and household size—all of which may play a significant role in determining an individual's mental health.
+
+** What is a Random Forest Regressor? ** 
+Imagine a forest full of decision trees, each contributing its own prediction. The Random Forest Regressor is an ensemble method that creates a "forest" of decision trees, and by averaging their predictions, it reduces errors and prevents overfitting. It’s very useful for handling complex, non-linear relationships, making it perfect for regression tasks like ours!
+
+** Methods: Building the Model **
+A variety of socioeconomic factors was used to predict the total PHQ-9 score:
+
+- **Race**
+- **Exam Month** 
+- **Age** 
+- **Military Status**
+- **Birth Country** 
+- **Education Level**
+- **Marital Status**
+- **HouseholdSize**
+- **Income Poverty Ratio**
+
+After cleaning and preprocessing the data, one-hot encoding was applied to categorical variables to make them compatible with the Random Forest model. Then, the data was split into 80% training and 20% testing.
+
+Lastly, GridSearchCV was used to optimize the hyperparameters, ensuring the best performance possible.
+
+** Results: How Did It Perform? ** 
+Initial Model (Before One-Hot Encoding):
+
+MSE: 23.62
+R²: -0.04 (Not great — this model needed work!)
+After One-Hot Encoding:
+
+MSE: 23.35
+R²: -0.028 (Slight improvement, but still not quite there.)
+After Hyperparameter Tuning:
+
+Best Parameters:
+
+- {'max_depth': 10, 'min_samples_leaf': 4, 'min_samples_split': 10, 'n_estimators': 200}
+- Best Cross-Validation MSE: 21.36
+- Test Set MSE: 21.47
+- Test Set R²: 0.055 (Still room for improvement, but the model is definitely getting closer!)
+- 
+Despite the improvements, the model wasn't perfect, but the hyperparameter tuning helped refine its accuracy, providing us with more reliable predictions.
+
+An MSE of 21.47 means that, on average, the model's predictions are off by about 21.47 units squared from the actual values. The R-squared value of 0.055 suggests that only 5.5% of the variability in the depression scores can be explained by the RF Regressor model.
+
+The plots below visualize some of the model results and metrics.
 
 <iframe src="assets/fig_actual_vs_predicted.html" width=800 height=600 frameBorder=0></iframe>
 
+As we can see, the relationship between the actual and predicted PHQ9 scores aren't quite falling on the y = x line, meaning that they do not match up as well (this makes sense given the MSE and R-squared values of the model).
+
 <iframe src="assets/fig_residuals.html" width=800 height=600 frameBorder=0></iframe>
+A residuals plot shows the difference between the model's predicted values and the actual observed values, a.k.a. residuals. A positive residual (above the y = 0 line) indicates that the model's prediction was too low, meaning the actual value was higher than predicted. A negative residual (below the y = 0 line) means the model over-predicted, and the actual value was lower than the prediction. Ideally, the residuals should be randomly scattered around the horizontal line at y = 0, indicating that the model is unbiased and accurately capturing the data's patterns - with this specific model, the scattering of residuals is fairly decent, suggesting that the model is performing reasonably well but still has room for improvement.
 
 <iframe src="assets/fig_importance.html" width=800 height=600 frameBorder=0></iframe>
 
+** Key Features Driving Depression Scores ** 
+So, what factors are most important in predicting depression scores? According to the model, the top influencers are:
+Income Poverty Ratio
+Age
+Household Size
+Education Level
+
+These socioeconomic factors are crucial in understanding mental health outcomes, and the model's feature importance revealed just how significant they are in predicting depression.
+
+** Conclusion ** 
+The Random Forest Regressor provided valuable insights into mental health disparities, particularly the role of socioeconomic factors like income and age. While the model is still a work in progress, it highlights the key variables influencing depression scores and lays the groundwork for further exploration and improvement. 
 
 
 #### 3. Clustering
