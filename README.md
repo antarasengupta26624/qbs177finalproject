@@ -18,7 +18,7 @@ III. Methods* \
 IV. Results \
 V. Conclusion \
 VI. References \
-*All code notebooks can be found the in analysis_nbs folder.
+*All code notebooks can be found the in analysis_nbs folder within this repository.
 
 ## I. Introduction
 
