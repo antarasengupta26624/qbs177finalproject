@@ -55,6 +55,15 @@ We are using data from the National Health and Nutrition Examination Survey (NHA
 - Computed PHQ-9 Total Score by summing all valid responses while ignoring NA values.
 
 ### B. Data Visualizations
+<iframe src="barplot.html" width=800 height=600 frameBorder=0></iframe>
+
+<iframe src="boxplot.html" width=800 height=600 frameBorder=0></iframe>
+
+<iframe src="funnel_plot.html" width=800 height=600 frameBorder=0></iframe>
+
+<iframe src="subplot_box.html" width=800 height=600 frameBorder=0></iframe>
+
+
 
 ### C. Modeling
 
