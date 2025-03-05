@@ -90,7 +90,7 @@ Here we have three box plots depicting PHQ-9 scores across age groups, income-to
 
 #### 5. PCA Plot of Age, Household Size, and Income Level Colored by Education Level
 
-<iframe src="assets/mental_health.jpg" width=800 height=600 frameBorder=0></iframe>
+<iframe src="assets/pca.html" width=800 height=600 frameBorder=0></iframe>
 
 
 Finally, this PCA plot visualizes the relationships between Age, Household Size, Income-to-Poverty Ratio, and Education Level. Each axis corresponds to one of these variables, with points scattered to indicate their distribution across the dataset. The color gradient on the right signifies different levels of education, ranging from lower to higher attainment, which allows for easy identification of educational trends within various age groups and household sizes. The plot highlights patterns and potential correlations, indicating how these demographic factors interact in the population being analyzed.
