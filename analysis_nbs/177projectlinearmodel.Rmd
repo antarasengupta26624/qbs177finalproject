@@ -1,0 +1,108 @@
+---
+title: "qbs 177 linear model"
+author: "Yanchu WU"
+date: "2025-03-02"
+output: pdf_document
+---
+
+#DATA WRANGLING
+```{r}
+library(dplyr)
+data <- read.csv("/Users/yanchuwu/downloads/complete_dataset_177.csv")
+data<-data[,-1]
+
+#rename each column
+
+#rename RIDRETH3(race)
+
+
+data <- data %>%
+  rename(
+    respond_id = SEQN,
+    race = `RIDRETH3`,
+    month_of_survey = RIDEXMON,
+    gender = RIAGENDR,
+    age = `RIDAGEYR`,
+    military_status = DMQMILIZ,
+    country_of_birth = DMDBORN4,
+    education_level = DMDEDUC2,
+    marital_status = `DMDMARTZ`,
+    household_size = `DMDHHSIZ`,
+    income_to_poverty_ratio = `INDFMPIR`,
+    depression_score = `PHQ9_TOTAL`
+  )
+
+colnames(data)
+```
+
+```{r}
+head(data)
+```
+
+```{r}
+#race
+
+data$race <- factor(data$race, levels = c(1, 2, 3, 4,6,7), labels = c("Mexican American", "Other Hispanic", "Non-Hispanic White", "Non-Hispanic Black","Non-Hispanic Asian", "Other"))
+
+```
+
+```{r}
+#month of survey
+data$month_of_survey <- factor(data$month_of_survey, levels = c(1, 2), labels = c("November 1 through April 30", "May 1 through October 31"))
+
+```
+
+```{r}
+#military status
+
+data$military_status <- factor(data$military_status, levels = c(1, 2, 7, 9), labels = c("Yes", "No", "Refused", "Don't know"))
+
+```
+
+
+```{r}
+#gender
+data$gender <- factor(data$gender, levels = c(1, 2), labels = c("male","female"))
+```
+
+```{r}
+#country of birth
+data$country_of_birth <- factor(data$country_of_birth, levels = c(1, 2, 77, 99), labels = c("Born in 50 US states or Washington", "Others", "Refused", "Don't know"))
+
+```
+
+```{r}
+#marital status
+data$marital_status <- factor(data$marital_status, levels = c(1, 2, 3, 77,99), labels = c("Married/Live with partner", "Widowed/Divorced/Separated", "Never married", "Refused", "Don't know"))
+
+```
+
+```{r}
+#education level
+data$education_level <- factor(data$education_level, levels = c(1, 2, 3, 4, 5, 7, 9), labels = c("Less than 9th grade", "9-11th grade (Includes 12th grade with no diploma)", "High school graduate/GED or equivalent", "Some college or AA degree", "College graduate or above", "Refused", "Don't know"))
+
+```
+
+```{r}
+head(data)
+```
+
+
+```{r}
+#DATA ANALYSIS
+library(lme4)
+library(dplyr)
+
+# Remove respondent_id and depression_score from predictors
+result <- data %>% select(-respond_id, -depression_score)
+
+for (column_name in colnames(result)) {
+  print(column_name)  
+  temp_data <- data %>% select(all_of(column_name), depression_score)
+  model <- lm(depression_score ~ ., data = temp_data)
+  print(summary(model))
+}
+
+
+```
+
