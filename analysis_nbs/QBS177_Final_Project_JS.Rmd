@@ -1,0 +1,160 @@
+---
+title: "QBS177 Final Project"
+author: "Jaini Shah"
+date: "2025-03-03"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+```{r}
+library(xgboost)
+library(caret)
+library(Matrix)
+library(dplyr)
+library(ggplot2)
+library(plotly)
+library(htmlwidgets)
+
+```
+
+
+
+```{r}
+# reading in data 
+nhanesData <- read.csv('/Users/jainishah/Desktop/FinalProject/complete_dataset_177.csv', stringsAsFactors = FALSE)
+
+# Define a named vector mapping old names to new names
+nhanesData <- nhanesData %>%
+  rename(
+    Race_Ethnicity_Code = RIDRETH3,
+    Exam_Month = RIDEXMON,
+    Gender_Code = RIAGENDR,
+    Age_Years = RIDAGEYR,
+    Military_Service_Status = DMQMILIZ,
+    Birthplace_Code = DMDBORN4,
+    Education_Level = DMDEDUC2,
+    Marital_Status = DMDMARTZ,
+    Household_Size = DMDHHSIZ,
+    Income_Level_as_Poverty_Ratio = INDFMPIR
+  )
+
+
+# Check the updated column names
+colnames(nhanesData)
+
+```
+
+```{r}
+# XGBOOST model
+# Updated predictor names after renaming
+predictors <- c("Race_Ethnicity_Code", "Exam_Month", "Gender_Code", "Age_Years", 
+                "Military_Service_Status", "Birthplace_Code", "Education_Level", 
+                "Marital_Status", "Household_Size", "Income_Level_as_Poverty_Ratio")
+
+
+set.seed(100) 
+
+# creating train-test split (80% train, 20% test)
+train_index <- createDataPartition(nhanesData$PHQ9_TOTAL, p = 0.8, list = FALSE)
+train_data <- nhanesData[train_index, ]
+test_data <- nhanesData[-train_index, ]
+
+# converting to matrix format for XGBoost
+X_train <- as.matrix(train_data[, predictors])
+y_train <- train_data$PHQ9_TOTAL
+
+X_test <- as.matrix(test_data[, predictors])
+y_test <- test_data$PHQ9_TOTAL
+
+# training XGBoost model
+xgbModel <- xgboost(data = X_train, label = y_train, 
+                     nrounds = 100, objective = "reg:squarederror",
+                     eta = 0.1, max_depth = 6, verbosity = 1)
+
+print(xgbModel)
+
+# predicting on test set
+y_pred <- predict(xgbModel, X_test)
+
+# computing RMSE (Root Mean Squared Error)
+rmse <- sqrt(mean((y_pred - y_test)^2))
+print(paste("RMSE:", round(rmse, 2)))
+
+# computing R-squared
+r_squared <- cor(y_pred, y_test)^2
+print(paste("R-squared:", round(r_squared, 3)))
+
+# computing feature importance
+importance_matrix <- xgb.importance(feature_names = predictors, model = xgbModel)
+print(importance_matrix)
+
+# plotting importance
+xgb.plot.importance(importance_matrix)
+
+```
+
+
+
+
+```{r}
+# actual vs. predicted plot
+
+# creating a df for actual vs predicted values
+results_df <- data.frame(Actual = y_test, Predicted = y_pred)
+
+# ggplot
+p <- ggplot(results_df, aes(x = Actual, y = Predicted)) +
+  geom_point(alpha = 0.5, color = "blue") +  # Scatter plot
+  geom_abline(slope = 1, intercept = 0, color = "red", linetype = "dashed") + 
+  labs(title = "Actual vs. Predicted PHQ-9 Total Scores",
+       x = "Actual PHQ-9 Score",
+       y = "Predicted PHQ-9 Score") +
+  theme_minimal()
+p
+# making it into an interactive plotly plot
+p_interactive <- ggplotly(p)
+
+saveWidget(p_interactive, "Actual_vs_Predicted_PHQ9.html", selfcontained = TRUE)
+
+```
+
+
+
+
+
+
+
+
+
+```{r}
+# fixing plot to use for presentation
+
+# converting importance matrix to dataframe
+importance_df <- as.data.frame(importance_matrix)
+
+# making plot interactive 
+interactive_plot <- plot_ly(
+  data = importance_df,
+  x = ~Gain,
+  y = ~Feature,
+  type = 'bar',
+  orientation = 'h',
+  hoverinfo = 'y+x',  # showing only feature and gain in the tooltip
+  marker = list(color = ~Gain, colorscale = list(c(0, "red"), c(1, "purple")))
+) %>%
+  layout(
+    title = "XGBoost Feature Importance (SES & PHQ-9)",
+    xaxis = list(title = "Importance (Gain)"),
+    yaxis = list(title = "Feature")
+  )
+
+
+interactive_plot
+
+saveWidget(as_widget(interactive_plot), "Feature_Importance_Plot.html", selfcontained = TRUE)
+```
+
