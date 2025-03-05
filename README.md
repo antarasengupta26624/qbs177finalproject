@@ -16,7 +16,8 @@ I. Introduction \
 II. Objectives \
 III. Methods* \
 IV. Results \
-V. References \
+V. Conclusion \
+VI. References \
 *All code notebooks can be found the in analysis_nbs folder.
 
 ## I. Introduction
