@@ -86,7 +86,16 @@ The funnel plot demonstrates how education level and gender relate to PHQ-9 scor
 
 <iframe src="assets/subplot_box.html" width=800 height=600 frameBorder=0></iframe>
 
-Finally, we have three box plots depicting PHQ-9 scores across age groups, income-to-poverty ratios, and household sizes. The results indicate a linear decline in PHQ-9 scores with increasing age and income levels, with some exceptions observed among those with particularly high income-to-poverty ratios. While the relationship between household size and depression scores is less pronounced, data indicates that individuals living in households of two or six members report the lowest PHQ-9 scores.
+Here we have three box plots depicting PHQ-9 scores across age groups, income-to-poverty ratios, and household sizes. The results indicate a linear decline in PHQ-9 scores with increasing age and income levels, with some exceptions observed among those with particularly high income-to-poverty ratios. While the relationship between household size and depression scores is less pronounced, data indicates that individuals living in households of two or six members report the lowest PHQ-9 scores.
+
+#### 5. PCA Plot of Age, Household Size, and Income Level Colored by Education Level
+
+<iframe src="assets/mental_health.jpg" width=800 height=600 frameBorder=0></iframe>
+
+
+Finally, this PCA plot visualizes the relationships between Age, Household Size, Income-to-Poverty Ratio, and Education Level. Each axis corresponds to one of these variables, with points scattered to indicate their distribution across the dataset. The color gradient on the right signifies different levels of education, ranging from lower to higher attainment, which allows for easy identification of educational trends within various age groups and household sizes. The plot highlights patterns and potential correlations, indicating how these demographic factors interact in the population being analyzed.
+
+
 
 ### B. Modeling
 
