@@ -10,9 +10,6 @@
 
 # Socioeconomic Disparities in Mental Health
 
-<iframe src="gender_phq9_box_plot.html" width=800 height=600 frameBorder=0></iframe>
-
-
 
 ## Contents 
 I. Introduction \
@@ -55,19 +52,19 @@ We are using data from the National Health and Nutrition Examination Survey (NHA
 - Computed PHQ-9 Total Score by summing all valid responses while ignoring NA values.
 
 ### B. Data Visualizations
-<iframe src="barplot.html" width=800 height=600 frameBorder=0></iframe>
+<iframe src="assets/barplot.html" width=800 height=600 frameBorder=0></iframe>
 
-<iframe src="boxplot.html" width=800 height=600 frameBorder=0></iframe>
+<iframe src="assets/boxplot.html" width=800 height=600 frameBorder=0></iframe>
 
-<iframe src="funnel_plot.html" width=800 height=600 frameBorder=0></iframe>
+<iframe src="assets/funnel_plot.html" width=800 height=600 frameBorder=0></iframe>
 
-<iframe src="subplot_box.html" width=800 height=600 frameBorder=0></iframe>
+<iframe src="assets/subplot_box.html" width=800 height=600 frameBorder=0></iframe>
 
 
 
 ### C. Modeling
 
-#### 1. {regression model}
+#### 1. Regression Model
 
 **Method** 
 To analyze the relationship between various demographic and socioeconomic factors with depression scores, we used a simple linear regression as our model. We first prepared the dataset by renaming the variables name for clarification and convert the categorical variables into factors. Then we run the linear regression models in a loop, evaluating each variable as a predictor to see their impact on the depression score.
@@ -104,7 +101,7 @@ To analyze the relationship between various demographic and socioeconomic factor
 10. Income-to-Poverty Ratio
 - A higher income-to-poverty ratio is statistically associated with **lower depression scores**. As income-to-poverty ratio increases, depression scores decrease.  
 
-![Linear Model](linearmodel.png) 
+![Linear Model](assets/linearmodel.png) 
 
 **Conclusion**
 Based on our linear model results, we conclude that the factors with the **strongest influence** on depression scores are:
@@ -121,24 +118,18 @@ However, **race, month of survey, military status, and household size** have **l
 
 
 
-#### 2. {Random Forest}
+#### 2. Random Forest
 
 
-<iframe src="fig_actual_vs_predicted.html" width=800 height=600 frameBorder=0></iframe>
+<iframe src="assets/fig_actual_vs_predicted.html" width=800 height=600 frameBorder=0></iframe>
 
-<iframe src="fig_residuals.html" width=800 height=600 frameBorder=0></iframe>
+<iframe src="assets/fig_residuals.html" width=800 height=600 frameBorder=0></iframe>
 
-<iframe src="fig_importance.html" width=800 height=600 frameBorder=0></iframe>
-
-
-
+<iframe src="assets/fig_importance.html" width=800 height=600 frameBorder=0></iframe>
 
 
 
-
-
-
-#### 3. {cluster}
+#### 3. Clustering
 **Goal**
 Cluster the data based on demographic features and test for differences between PHQ-9 Scores between the clusters. 
 
@@ -147,23 +138,23 @@ K-means clustering was used with 7 clusters
 	Number of clusters was chosen based on scree plot as well as silhouette plot
 *Selecting number of centroids*
 **Silhouette plot:**
-![Silhouette](silhouette_clusters.png)
+![Silhouette](assets/silhouette_clusters.png)
 Average silhouette width is an indicator of how well clusters are defined, with a higher silhouette score being associated with better clustering. 
 
 **Scree Plot:**
-![screeplot](scree_plot.png)
+![screeplot](assets/scree_plot.png)
 Total Within Sum of Squares refers to the sum of squared error within a cluster, meaning that the lower the total sum of squares the tighter the cluster is.
 
 Though the silhouette plot indicates that 2 clusters would be ideal, the within sum of squares for 2 clusters is very high as demonstrated on the scree plot. Therefore, 7 was chosen as the number of clusters for analysis due to decreased within sum of squares and having an average silhouette score for this dataset. 
 
 **Results**
-![depression_dist](depression_dist.png)
-![cluster_boxplot.png](cluster_boxplot.png)
+![depression_dist](assets/depression_dist.png)
+![cluster_boxplot.png](assets/cluster_boxplot.png)
 
-![cluster_result](Cluster_results.png)
+![cluster_result](assets/Cluster_results.png)
 The size of the clusters are somewhat similar, ranging from 712 to 918. From both the boxplot and the plotted distributions, we can see that the PHQ-9 scores vary somewhat between the clusters. 
 The mean PHQ-9 score ranges from 2.47 to 6.07, and the cluster with the smallest standard deviation is cluster 6. In an anova comparing the means of every cluster, there is evidence that the mean PHQ-9 score for at least one group is significantly different from the others.
-![anova](anova_results.png) 
+![anova](assets/anova_results.png) 
 
 **Further results**
 Using these clusters, further analysis can be performed to determine the demographic factors that were the most important in deriving the clustering boundaries. 
@@ -220,7 +211,7 @@ Using these clusters, further analysis can be performed to determine the demogra
 - Identifies key predictors affecting PHQ-9 scores.
 
 
-<iframe src="xgboost.html" width=800 height=600 frameBorder=0></iframe>
+<iframe src="assets/xgboost.html" width=800 height=600 frameBorder=0></iframe>
 
 ## IV. Conclusion
 
