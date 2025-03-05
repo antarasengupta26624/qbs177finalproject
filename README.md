@@ -39,6 +39,18 @@ We are using data from the National Health and Nutrition Examination Survey (NHA
 ## III. Methods
 
 ### A. Data Wrangling
+1. Loading & Integrating Data
+- Imported ‘depression questionnaire’ and ‘demographics’ datasets using read_xpt().
+- Combined the two datasets by matching records through the ‘SEQN' identifier.
+
+2. Addressing Missing Data  
+- Implemented Multiple Imputation by Chained Equations (MICE) with predictive mean matching (pmm) to estimate missing values.
+- Created five imputed datasets and opted for the first dataset for all analyses.
+
+3. Constructing the PHQ-9 Depression Score   
+- Identified PHQ-9 questionnaire items (‘DPQ010’ to ‘DPQ090’).
+- Converted values 7 (refused) and 9 (missing) to NA for accurate processing.
+- Computed PHQ-9 Total Score by summing all valid responses while ignoring NA values.
 
 ### B. Data Visualizations
 
