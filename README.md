@@ -297,6 +297,8 @@ Using these clusters, further analysis can be performed to determine the demogra
 6. Feature Importance Analysis
 - Identifies key predictors affecting PHQ-9 scores.
 
+<iframe src="assets/Actual_vs_Predicted_PHQ9.html" width=800 height=600 frameBorder=0></iframe>
+
 
 <iframe src="assets/xgboost.html" width=800 height=600 frameBorder=0></iframe>
 
