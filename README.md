@@ -121,7 +121,22 @@ However, **race, month of survey, military status, and household size** have **l
 
 
 
-#### 2. {lasso/decision tree}
+#### 2. {Random Forest}
+
+
+<iframe src="fig_actual_vs_predicted.html" width=800 height=600 frameBorder=0></iframe>
+
+<iframe src="fig_residuals.html" width=800 height=600 frameBorder=0></iframe>
+
+<iframe src="fig_importance.html" width=800 height=600 frameBorder=0></iframe>
+
+
+
+
+
+
+
+
 
 #### 3. {cluster}
 **Goal**
