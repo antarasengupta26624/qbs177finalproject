@@ -47,7 +47,7 @@ We are using data from the National Health and Nutrition Examination Survey (NHA
 #### 1. {regression model}
 
 ##### Summary of Methodology
-To analyze the relationship between depression scores and various demographic and socioeconomic factors, we first prepared the dataset by renaming and formatting variables for clarity. Categorical variables such as race, marital status, and gender were converted into factor variables. We then applied a series of simple linear regression models, each evaluating a single predictor's impact on depression scores. The regression outputs provided coefficient estimates, standard errors, t-values, and p-values to assess statistical significance. Key model fit metrics, including the residual standard error, multiple $R^2$, and F-statistics, were used to determine the explanatory power of each variable. This approach allowed us to identify significant predictors, such as gender, age, income-to-poverty ratio, and marital status, while also highlighting non-significant factors.
+To analyze the relationship between various demographic and socioeconomic factors with depression scores, we used a simple linear regression as our model. We first prepared the dataset by renaming the variables name for clarification and convert the categorical variables into factors. Then we run the linear regression models in a loop, evaluating each variable as a predictor to see their impact on the depression score.
 
 ##### Results
 
