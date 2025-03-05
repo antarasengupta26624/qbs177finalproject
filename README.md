@@ -117,12 +117,27 @@ Cluster the data based on demographic features and test for differences between 
 K-means clustering was used with 7 clusters 
 	Number of clusters was chosen based on scree plot as well as silhouette plot
 *Selecting number of centroids*
-Silhouette plot:
+**Silhouette plot:**
 ![Silhouette](silhouette_clusters.png)
 Average silhouette width is an indicator of how well clusters are defined, with a higher silhouette score being associated with better clustering. 
 
-Scree Plot:
+**Scree Plot:**
 ![screeplot](scree_plot.png)
+Total Within Sum of Squares refers to the sum of squared error within a cluster, meaning that the lower the total sum of squares the tighter the cluster is.
+
+Though the silhouette plot indicates that 2 clusters would be ideal, the within sum of squares for 2 clusters is very high as demonstrated on the scree plot. Therefore, 7 was chosen as the number of clusters for analysis due to decreased within sum of squares and having an average silhouette score for this dataset. 
+
+**Results**
+![depression_dist](depression_dist.png)
+![cluster_boxplot.png](cluster_boxplot.png)
+
+![cluster_result](Cluster_results.png)
+The size of the clusters are somewhat similar, ranging from 712 to 918. From both the boxplot and the plotted distributions, we can see that the PHQ-9 scores vary somewhat between the clusters. 
+The mean PHQ-9 score ranges from 2.47 to 6.07, and the cluster with the smallest standard deviation is cluster 6. In an anova comparing the means of every cluster, there is evidence that the mean PHQ-9 score for at least one group is significantly different from the others.
+![anova](anova_results.png) 
+
+**Further results**
+Using these clusters, further analysis can be performed to determine the demographic factors that were the most important in deriving the clustering boundaries. 
 
 #### 4. **eXtreme Gradient Boosting (XGBoost)**
 
