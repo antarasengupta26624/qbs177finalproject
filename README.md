@@ -300,6 +300,11 @@ Using these clusters, further analysis can be performed to determine the demogra
 
 <iframe src="assets/xgboost.html" width=800 height=600 frameBorder=0></iframe>
 
+**RMSE: 4.68** 
+- Avergage deviation between the model's predicted values and actual values.
+
+**R-squared: 0.079**
+- 7.9% of the variance in the dependent variab les (PHQ-9 score) is explained by the independent variables in the model. 
 ## V. Conclusion
 
 Understanding the intersection of socioeconomic factors and mental health is crucial for addressing the disparities faced by millions. Our project sheds light on how various demographic factors contribute to depression rates, utilizing real-world data from NHANES. Through our analyses, we have highlighted the pressing need for enhanced mental health care resources and raised public awareness about these issues.
