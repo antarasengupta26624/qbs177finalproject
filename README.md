@@ -30,7 +30,7 @@ Although that mental health disorder can happen to anyone regardless of their so
 
 ### B. Dataset
 
-<iframe src="assets/nhanes.jpg" width=800 height=600 frameBorder=0></iframe>
+<iframe src="assets/nhahnes.jpg" width=800 height=600 frameBorder=0></iframe>
 
 We are using data from the National Health and Nutrition Examination Survey (NHANES) for the years 2021-2023. This dataset provides us an overview of different demographic factors such as income, education, and household sizes and the PAtient Health Questionnaire responses(PHQ-9).
 
