@@ -109,6 +109,19 @@ However, **race, month of survey, military status, and household size** have **l
 #### 2. {lasso/decision tree}
 
 #### 3. {cluster}
+**Goal**
+Cluster the data based on demographic features and test for differences between PHQ-9 Scores between the clusters. 
+
+**Method**
+K-means clustering was used with 7 clusters 
+	Number of clusters was chosen based on scree plot as well as silhouette plot
+*Selecting number of centroids*
+Silhouette plot:
+![Silhouette](silhouette_clusters.png)
+Average silhouette width is an indicator of how well clusters are defined, with a higher silhouette score being associated with better clustering. 
+
+Scree Plot:
+![screeplot](scree_plot.png)
 
 #### 4. **eXtreme Gradient Boosting (XGBoost)**
 
