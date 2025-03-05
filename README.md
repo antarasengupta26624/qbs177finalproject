@@ -60,43 +60,43 @@ We are using data from the National Health and Nutrition Examination Survey (NHA
 
 #### 1. {regression model}
 
-##### Summary of Methodology
+**Method**
 To analyze the relationship between various demographic and socioeconomic factors with depression scores, we used a simple linear regression as our model. We first prepared the dataset by renaming the variables name for clarification and convert the categorical variables into factors. Then we run the linear regression models in a loop, evaluating each variable as a predictor to see their impact on the depression score.
 
-##### Results
-
-###### Race
+**Result**
+1. Race
 - Non-Hispanic Asians tend to have a significantly lower depression score compared to the baseline (Mexican American).  
 
-###### Month of Survey
+2. Month of Survey
 - No significant effect on depression scores.  
 
-###### Gender
+3. Gender
 - Females have a significantly higher depression score compared to males.  
 
-###### Age
+4. Age
 - Age has a negative correlation with depression score. For each additional year of age, the depression score decreases by **-0.0456**.  
 
-###### Military Status
+5. Military Status
 - No statistically significant correlation with depression (**p = 0.0913**), but those who responded "No" to military service tend to have slightly lower depression scores.  
 
-###### Country of Birth
+6. Country of Birth
 - Individuals born outside the U.S. tend to have lower depression scores.  
 
-###### Education Level
+
+7. Education Level
 - Individuals with higher education (college graduate or above) have significantly lower depression scores compared to those with lower education levels.  
 
-###### Marital Status
+8. Marital Status
 - Those who are widowed/divorced/separated tend to have higher depression scores compared to the baseline (married/live with partner). 
 - Never-married individuals have the highest increase in depression scores among all marital groups.  
 
-###### Household Size
+9. Household Size
 - No significant effect on depression scores.  
 
-###### Income-to-Poverty Ratio
+10. Income-to-Poverty Ratio
 - A higher income-to-poverty ratio is statistically associated with **lower depression scores**. As income-to-poverty ratio increases, depression scores decrease.  
 
-##### Conclusion
+** Conclusion **
 Based on our linear model results, we conclude that the factors with the **strongest influence** on depression scores are:
 - **Gender** (higher depression in females)
 - **Age** (negative effect)
@@ -105,6 +105,9 @@ Based on our linear model results, we conclude that the factors with the **stron
 - **Income-to-poverty ratio** (higher income lowers depression scores)
 
 However, **race, month of survey, military status, and household size** have **little or no effect** on depression scores.
+
+
+
 
 
 
