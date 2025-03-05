@@ -239,9 +239,12 @@ Though the silhouette plot indicates that 2 clusters would be ideal, the within 
 ![cluster_boxplot.png](assets/cluster_boxplot.png)
 
 ![cluster_result](assets/Cluster_results.png)
+
 The size of the clusters are somewhat similar, ranging from 712 to 918. From both the boxplot and the plotted distributions, we can see that the PHQ-9 scores vary somewhat between the clusters. 
 The mean PHQ-9 score ranges from 2.47 to 6.07, and the cluster with the smallest standard deviation is cluster 6. In an anova comparing the means of every cluster, there is evidence that the mean PHQ-9 score for at least one group is significantly different from the others.
+
 ![anova](assets/anova_results.png) 
+
 
 **Further results**
 Using these clusters, further analysis can be performed to determine the demographic factors that were the most important in deriving the clustering boundaries. 
@@ -303,10 +306,10 @@ Using these clusters, further analysis can be performed to determine the demogra
 <iframe src="assets/xgboost.html" width=800 height=600 frameBorder=0></iframe>
 
 **RMSE: 4.68** 
-- Avergage deviation between the model's predicted values and actual values.
+- Average deviation between the model's predicted values and actual values.
 
 **R-squared: 0.079**
-- 7.9% of the variance in the dependent variab les (PHQ-9 score) is explained by the independent variables in the model. 
+- 7.9% of the variance in the dependent variables (PHQ-9 score) is explained by the independent variables in the model. 
 ## V. Conclusion
 
 Understanding the intersection of socioeconomic factors and mental health is crucial for addressing the disparities faced by millions. Our project sheds light on how various demographic factors contribute to depression rates, utilizing real-world data from NHANES. Through our analyses, we have highlighted the pressing need for enhanced mental health care resources and raised public awareness about these issues.
