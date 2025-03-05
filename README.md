@@ -30,7 +30,7 @@ Although that mental health disorder can happen to anyone regardless of their so
 
 ### B. Dataset
 
-<iframe src="assets/nhahnes.jpg" width=800 height=600 frameBorder=0></iframe>
+<iframe src="assets/nhanes.avif" width=800 height=600 frameBorder=0></iframe>
 
 We are using data from the National Health and Nutrition Examination Survey (NHANES) for the years 2021-2023. This dataset provides us an overview of different demographic factors such as income, education, and household sizes and the PAtient Health Questionnaire responses(PHQ-9).
 
@@ -38,6 +38,8 @@ We are using data from the National Health and Nutrition Examination Survey (NHA
 1. Analyze the impact of socioeconomic factors on mental health.
 2. Identify key predictors of mental health disorders.
 3. Enhance awareness and advocate for equitable mental health resourcees. 
+
+<iframe src="assets/socioeconomic" width=800 height=600 frameBorder=0></iframe>
 
 ## III. Methods
 
