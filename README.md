@@ -298,10 +298,18 @@ Using these clusters, further analysis can be performed to determine the demogra
 
 ## V. Conclusion
 
+Understanding the intersection of socioeconomic factors and mental health is crucial for addressing the disparities faced by millions. Our project sheds light on how various demographic factors contribute to depression rates, utilizing real-world data from NHANES. Through our analyses, we have highlighted the pressing need for enhanced mental health care resources and raised public awareness about these issues.
+
+Our findings indicate that significant predictors of depression scores include gender, age, marital status, education level, and income-to-poverty ratio. Specifically, higher depression scores were found among females, younger individuals, and those who are widowed, divorced, or never married, while higher education and income correlated with lower scores. The clustering analysis revealed notable differences in PHQ-9 scores among various demographic groups, underscoring the need for targeted mental health interventions.
+
+However, we must acknowledge several limitations in our study. Both the Random Forest and the XGBoost models demonstrated low explanatory power, with R-squared values of 0.055 and 0.079, respectively. This suggests that other factors likely influence depression scores beyond the socioeconomic variables we analyzed. Additionally, our reliance on cross-sectional data from NHANES may limit the ability to draw causal inferences. Potential confounding variables and the imputation of missing data could introduce bias, further complicating our findings. Lastly, the generalizability of our results may be restricted to the population sampled. Crucial future steps could include further research that includes a broader range of variables and diverse populations.
+
+In conclusion, our insights contribute to the understanding of mental health disparities and serve as a foundation for prioritizing support for vulnerable groups. By advocating for policies and informing interventions that address these critical disparities, we can work toward improved mental health outcomes for all individuals.
+
 
 ## VI. References
 1. National Health and Nutrition Examination Survey (NHANES). (2021-2023). [Dataset source description].
 2. R Core Team (2021). R: A language and environment for statistical computing. R Foundation for Statistical Computing.
 3. Breiman, L. (2001). Random Forests. Machine Learning, 45(1), 5-32.
 4. Chen, T., & Guestrin, C. (2016). XGBoost: A Scalable Tree Boosting System. In Proceedings of the 22nd ACM SIGKDD International Conference on Knowledge Discovery and Data Mining (pp. 785-794).
-5. Additional sources based on data and methods used.
+
