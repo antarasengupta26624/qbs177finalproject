@@ -46,6 +46,54 @@ We are using data from the National Health and Nutrition Examination Survey (NHA
 
 #### 1. {regression model}
 
+##### Summary of Methodology
+To analyze the relationship between depression scores and various demographic and socioeconomic factors, we first prepared the dataset by renaming and formatting variables for clarity. Categorical variables such as race, marital status, and gender were converted into factor variables. We then applied a series of simple linear regression models, each evaluating a single predictor's impact on depression scores. The regression outputs provided coefficient estimates, standard errors, t-values, and p-values to assess statistical significance. Key model fit metrics, including the residual standard error, multiple $R^2$, and F-statistics, were used to determine the explanatory power of each variable. This approach allowed us to identify significant predictors, such as gender, age, income-to-poverty ratio, and marital status, while also highlighting non-significant factors.
+
+##### Results
+
+###### Race
+- Non-Hispanic Asians tend to have a significantly lower depression score compared to the baseline (Mexican American).  
+
+###### Month of Survey
+- No significant effect on depression scores.  
+
+###### Gender
+- Females have a significantly higher depression score compared to males.  
+
+###### Age
+- Age has a negative correlation with depression score. For each additional year of age, the depression score decreases by **-0.0456**.  
+
+###### Military Status
+- No statistically significant correlation with depression (**p = 0.0913**), but those who responded "No" to military service tend to have slightly lower depression scores.  
+
+###### Country of Birth
+- Individuals born outside the U.S. tend to have lower depression scores.  
+
+###### Education Level
+- Individuals with higher education (college graduate or above) have significantly lower depression scores compared to those with lower education levels.  
+
+###### Marital Status
+- Those who are widowed/divorced/separated tend to have higher depression scores compared to the baseline (married/live with partner). 
+- Never-married individuals have the highest increase in depression scores among all marital groups.  
+
+###### Household Size
+- No significant effect on depression scores.  
+
+###### Income-to-Poverty Ratio
+- A higher income-to-poverty ratio is statistically associated with **lower depression scores**. As income-to-poverty ratio increases, depression scores decrease.  
+
+##### Conclusion
+Based on our linear model results, we conclude that the factors with the **strongest influence** on depression scores are:
+- **Gender** (higher depression in females)
+- **Age** (negative effect)
+- **Marital status** (widowed/divorced/separated & never married increase depression scores)
+- **Education level** (higher education lowers depression scores)
+- **Income-to-poverty ratio** (higher income lowers depression scores)
+
+However, **race, month of survey, military status, and household size** have **little or no effect** on depression scores.
+
+
+
 #### 2. {lasso/decision tree}
 
 #### 3. {cluster}
